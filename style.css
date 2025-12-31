@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(224, 229, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    background-color: rgb(224, 229, 236);
+    box-shadow: rgb(190, 195, 201) 20px 20px 60px, rgb(255, 255, 255) -20px -20px 60px;
+    width: 350px;
+    padding: 25px;
+    border-radius: 30px;
+}
+
+.display {
+    background-color: #e0e5ec;
+    height: 70px;
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    padding: 0 15px; /* Side padding for the text */
+    
+    /* Neumorphic Sunken Effect */
+    box-shadow: inset 5px 5px 10px #bec3c9, 
+                inset -5px -5px 10px #ffffff;
+    
+    /* Scroll Logic: Essential for handling long numbers */
+    display: block;        /* Changed from flex to block to allow scrolling */
+    overflow-x: auto;      /* Enable horizontal scroll */
+    overflow-y: hidden;    /* Hide vertical scroll */
+    scroll-behavior: smooth;
+    white-space: nowrap;   /* Force text to stay on one line */
+}
+
+#display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    color: #3d444d;
+    
+    display: block;        /* Fill the container width */
+    text-align: right;     /* Keep numbers on the right side */
+    min-width: 100%;       /* Force it to at least match container width */
+    line-height: 80px;     /* Vertically centers the text (match container height) */
+}
+
+.display::-webkit-scrollbar {
+    height: 5px;
+}
+
+.display::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0 10px;
+}
+
+.display::-webkit-scrollbar-thumb {
+    background: transparent; /* Invisible by default */
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+
+/* Show the scrollbar thumb only when hovering over the display box */
+.display:hover::-webkit-scrollbar-thumb {
+    background: #bec3c9; 
+    box-shadow: inset 1px 1px 2px #ffffff;
+}
+
+/* Button Rows */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    border-radius: 50%;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    transition: 0.2s;
+    background-color: rgb(224, 229, 236);
+    font-size: 1.2rem;
+    height: 60px;
+    width: 60px;
+    font-weight: 600;
+    color: rgb(85, 85, 85);
+    cursor: pointer;
+    box-shadow: rgb(190, 195, 201) 6px 6px 12px,
+        rgb(255, 255, 255) -6px -6px 12px;
+    margin: 5px;
+}
+
+/* Button Press Effect */
+button:active {
+    box-shadow: inset 4px 4px 8px #bec3c9, 
+                inset -4px -4px 8px #ffffff;
+    transform: scale(0.98);
+}
+
+button:last-child {
+    color: rgb(255, 140, 0);
+}
+
+button:hover {
+    color: rgb(0, 0, 0);
+}
+
+#decimal, #del {
+    width: 48%;
+    border-radius: 15px;
+}
+
+#del {
+    color: rgb(217, 83, 79);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    background: #d1d9e6;
+}
