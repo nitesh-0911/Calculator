@@ -137,3 +137,15 @@ button:disabled {
     box-shadow: none;
     background: #d1d9e6;
 }
+
+/* Branding Styles */
+.brand-header h1 {
+    font-size: 1.5rem;
+    color: #7a828e;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    /* This makes it look engraved */
+    text-shadow: 1px 1px 1px #ffffff, -1px -1px 1px #bec3c9;
+}
